@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
@@ -11,6 +12,9 @@ dotenv.config();
 
 const app = express();  
 const PORT = process.env.PORT || 3000;  
+
+// CORS - allow every request from any origin
+app.use(cors());
 app.use(bodyParser.json()); 
 app.use(cookieParser());
 
